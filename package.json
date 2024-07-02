@@ -15,5 +15,8 @@
   "scripts": {
     "generate": "cd client && npm run generate",
     "demo:ecommerce": "cd demos/ecommerce_shop && npm start"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2"
   }
 }
