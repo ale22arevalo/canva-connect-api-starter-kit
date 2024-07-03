@@ -13,10 +13,6 @@ import {
   Tooltip,
 } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
-import InboxIcon from "@mui/icons-material/Inbox";
-import SendIcon from "@mui/icons-material/Send";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import UploadFileIcon from "@mui/icons-material/UploadFile";
 import { useAppContext } from "src/context";
 import { Paths } from "src/routes";
 
@@ -40,32 +36,6 @@ export const SideBar = () => {
       route: Paths.HOME,
       disabled: false,
     },
-    {
-      text: "Products",
-      Icon: ShoppingCartIcon,
-      route: Paths.PRODUCTS,
-      disabled: !isAuthorized,
-    },
-    {
-      text: "Marketing",
-      Icon: SendIcon,
-      route: Paths.MARKETING,
-      disabled: !isAuthorized,
-    },
-    {
-      text: "Uploads",
-      Icon: UploadFileIcon,
-      route: Paths.HOME,
-      disabled: true,
-      isDemo: true,
-    },
-    {
-      text: "Orders",
-      Icon: InboxIcon,
-      route: Paths.HOME,
-      disabled: true,
-      isDemo: true,
-    },
   ];
 
   return (
@@ -84,13 +54,9 @@ export const SideBar = () => {
       <Toolbar />
       <Box overflow="auto">
         <List>
-          {sidebarItems.map(({ text, Icon, route, disabled, isDemo }) => (
+          {sidebarItems.map(({ text, Icon, route, disabled }) => (
             <Tooltip
-              title={
-                isDemo
-                  ? "This link is for demonstration purposes only and is not functional."
-                  : ""
-              }
+              title=""
               placement="right"
               key={text}
               arrow={true}

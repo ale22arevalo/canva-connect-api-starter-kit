@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import type { Design } from "@canva/connect-api-ts/types.gen";
 import { Box, Grid } from "@mui/material";
-import { SuccessfulDesignModal, PageHeader, ProductCard } from "src/components";
+import { SuccessfulDesignModal, ProductCard } from "src/components";
 import { useAppContext } from "src/context";
 import type { Product } from "src/models";
 import {
@@ -27,14 +27,14 @@ export const ProductsPage = () => {
         const getProductsResult = await getProducts();
 
         if (!getProductsResult.products.length) {
-          setErrors((prevState) => prevState.concat("No products found."));
+          setErrors((prevState) => prevState.concat("No assets found."));
         } else {
           setProducts(getProductsResult.products);
         }
       } catch (error) {
         console.error(error);
         setErrors((prevState) =>
-          prevState.concat("Something went wrong fetching products."),
+          prevState.concat("Something went wrong fetching assets."),
         );
       } finally {
         setIsFetching(false);
@@ -69,7 +69,6 @@ export const ProductsPage = () => {
 
   return (
     <Box paddingY={2}>
-      <PageHeader title="Products" />
       {!isFetching && (
         <>
           <Grid container={true} spacing={8} marginBottom={4}>

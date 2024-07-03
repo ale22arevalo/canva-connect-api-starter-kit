@@ -23,7 +23,7 @@ export const ConnectionAlert = () => {
       severity="success"
       alertTitle={
         <>
-          The Canva for <b>Nourish</b> integration is now connected
+          The integration is now connected
         </>
       }
       alertBody={

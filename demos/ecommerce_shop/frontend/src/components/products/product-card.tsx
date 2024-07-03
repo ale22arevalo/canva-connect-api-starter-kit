@@ -58,12 +58,6 @@ export const ProductCard = ({
     </Box>
     <Stack spacing={1}>
       <Typography variant="h6">{product.name}</Typography>
-      <Typography variant="body2" color="textSecondary">
-        Unpublished
-      </Typography>
-      <Typography variant="body2" color="textSecondary">
-        ${product.price.toFixed(2)}
-      </Typography>
     </Stack>
   </Card>
 );
